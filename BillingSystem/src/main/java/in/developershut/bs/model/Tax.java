@@ -4,9 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import static javax.persistence.InheritanceType.SINGLE_TABLE;
+import static javax.persistence.InheritanceType.JOINED;
 
 @Entity
 @Table(name = "T_TAX")
+@Inheritance(strategy = JOINED)
 public class Tax {
 
 	@Id

@@ -11,22 +11,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>in.developershut.bs.model.Invoice</entity-name>
-		<entity-width>141</entity-width>
-		<entity-height>286</entity-height>
-		<entity-X-Coordinate>15</entity-X-Coordinate>
-		<entity-Y-Coordinate>507</entity-Y-Coordinate>
+		<entity-name>in.developershut.bs.model.VAT</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>70</entity-height>
+		<entity-X-Coordinate>427</entity-X-Coordinate>
+		<entity-Y-Coordinate>669</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>in.developershut.bs.model.VAT</entity-name>
-		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
-		<entity-X-Coordinate>193</entity-X-Coordinate>
-		<entity-Y-Coordinate>735</entity-Y-Coordinate>
+		<entity-name>in.developershut.bs.model.Invoice</entity-name>
+		<entity-width>141</entity-width>
+		<entity-height>286</entity-height>
+		<entity-X-Coordinate>15</entity-X-Coordinate>
+		<entity-Y-Coordinate>507</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -44,22 +44,22 @@
 	</entity>
 
 	<entity>
-		<entity-name>in.developershut.bs.model.Goods</entity-name>
+		<entity-name>in.developershut.bs.model.Tax</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>188</entity-height>
+		<entity-height>70</entity-height>
 		<entity-X-Coordinate>520</entity-X-Coordinate>
-		<entity-Y-Coordinate>380</entity-Y-Coordinate>
+		<entity-Y-Coordinate>860</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
 	</entity>
 
 	<entity>
-		<entity-name>in.developershut.bs.model.Tax</entity-name>
+		<entity-name>in.developershut.bs.model.Goods</entity-name>
 		<entity-width>120</entity-width>
-		<entity-height>70</entity-height>
+		<entity-height>188</entity-height>
 		<entity-X-Coordinate>520</entity-X-Coordinate>
-		<entity-Y-Coordinate>735</entity-Y-Coordinate>
+		<entity-Y-Coordinate>380</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
