@@ -1,25 +1,30 @@
 package in.developershut.bs.action.auth;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import in.developershut.bs.model.User;
+import in.developershut.bs.util.MiscUtil;
+
 import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class AuthenticateUser extends ActionSupport implements SessionAware {
+public class AuthenticateUser extends ActionSupport implements SessionAware, ModelDriven<User> {
 
 	private static final long serialVersionUID = 1L;
-	private String username;
-	private String password;
 	private SessionMap<String, Object> sessionMap; 
+	
+	private User user = new User();
 
 	public String loginUser() {
-		if (getUsername().equals("admin") && getPassword().equals("password")) {
+		if (user.getUserName().equals("admin") && user.getPassWord().equals("password")) {
 			
-			
+			String currentLoginTime = MiscUtil.getCurrentTimeStamp();
+			sessionMap.put(getText("session.flag"), true);
+			sessionMap.put(getText("session.user"), user.getUserName());
+			sessionMap.put(getText("session.currentTime"), currentLoginTime);
 			
 			return SUCCESS;
 		}
@@ -30,48 +35,14 @@ public class AuthenticateUser extends ActionSupport implements SessionAware {
 	public String logoutUser() {
 		Map<String, Object> sessionMap = getSession();
 		if(!sessionMap.isEmpty()) {
-			sessionMap.remove("loginFlag");
-			System.out.println(sessionMap.get("loginFlag"));
+			sessionMap.remove(getText("session.flag"));
+			sessionMap.remove(getText("session.user"));
+			sessionMap.remove(getText("session.currentTime"));
+			
 			return SUCCESS;
 		}
 		return ERROR;
 	}
-
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	/**
-	 * @return the serialversionuid
-	 */
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 	
 	/**
 	 * @return the sessionMap
@@ -85,19 +56,11 @@ public class AuthenticateUser extends ActionSupport implements SessionAware {
 	 */
 	@Override
 	public void setSession(Map<String, Object> sessionMapParam) {
-		// Set Session
-		sessionMap = (SessionMap<String, Object>) sessionMapParam;
+		sessionMap = (SessionMap<String, Object>) sessionMapParam;		
+	}
 
-		// Get current login time
-		Calendar currentDateTime = Calendar.getInstance();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss z");
-		dateFormat.setCalendar(currentDateTime);
-		String currentLoginTime = dateFormat.format(currentDateTime.getTime());
-
-		// Set session variables
-		sessionMap.put("loginFlag", true);
-		System.out.println(getUsername());
-		sessionMap.put("userName", getUsername());
-		sessionMap.put("currentLoginTime", currentLoginTime);
+	@Override
+	public User getModel() {
+		return user;
 	}
 }

@@ -48,6 +48,6 @@ Version    : 1.0
 	<div id="footer">
 		<tiles:insertAttribute name="footer" />
 	</div>
-
+<jsp:include page="back-history-invalidator.jsp" />
 </body>
 </html>

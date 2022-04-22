@@ -7,48 +7,72 @@
 
 	<constant name="struts.ui.theme" value="simple" />
 
-	<package name="navigation" namespace="/" extends="struts-default">
+	<package name="mainNavigation" namespace="/" extends="struts-default">
 
 		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
 		
 		<interceptors>
-		<interceptor name="sessionChecker" class="in.developershut.bs.interceptor.SessionChecker"></interceptor>
-			<interceptor-stack name="authStack">
-			<interceptor-ref name="sessionChecker" />
+			<interceptor name="validSessionChecker" class="in.developershut.bs.interceptor.ValidSessionChecker"></interceptor>
+			<interceptor name="clearCache" class="in.developershut.bs.interceptor.ClearCache"></interceptor>
+			
+			<interceptor-stack name="validSessionAuthStack">
+			<interceptor-ref name="validSessionChecker" />
+			<interceptor-ref name="clearCache" />
+			<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			
+			<interceptor name="invalidSessionChecker" class="in.developershut.bs.interceptor.InvalidSessionChecker"></interceptor>
+			<interceptor name="clearCache" class="in.developershut.bs.interceptor.ClearCache"></interceptor>
+			
+			<interceptor-stack name="invalidSessionAuthStack">
+			<interceptor-ref name="invalidSessionChecker" />
+			<interceptor-ref name="clearCache" />
 			<interceptor-ref name="defaultStack" />
 			</interceptor-stack>
 		</interceptors>
 		
 		<action name="" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateHome">
+			<interceptor-ref name="invalidSessionAuthStack" />
+			<result name="none" type="tiles">userhome</result>
 			<result name="home" type="tiles">home</result>
 		</action>
 
 		<action name="tech-support" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateTechSupport">
+			<interceptor-ref name="invalidSessionAuthStack" />
+			<result name="none" type="tiles">userhome</result>
 			<result name="tech-support" type="tiles">tech-support</result>
 		</action>
 
 		<action name="login" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateLogin">
+			<interceptor-ref name="invalidSessionAuthStack" />
+			<result name="none" type="tiles">userhome</result>
 			<result name="login" type="tiles">login</result>
 		</action>
-
+	
 		<action name="user-home" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateUserHome">
-			<interceptor-ref name="authStack" /> 
+			<interceptor-ref name="validSessionAuthStack" /> 
 			<result name="userhome" type="tiles">userhome</result>
-			<result name="login" type="tiles">login</result>
+			<result name="input" type="redirect">login</result>
 		</action>
 
 		<action name="settings" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateSettings">
+			<interceptor-ref name="validSessionAuthStack" />
 			<result name="settings" type="tiles">settings</result>
+			<result name="input" type="redirect">login</result>
 		</action>
 
 		<action name="billing" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateBilling">
+			<interceptor-ref name="validSessionAuthStack" />
 			<result name="billing" type="tiles">billing</result>
+			<result name="input" type="redirect">login</result>
 		</action>
 
 		<action name="reports" class="in.developershut.bs.action.navigation.NavigationAction" method="navigateReports">
+			<interceptor-ref name="validSessionAuthStack" />
 			<result name="reports" type="tiles">reports</result>
+			<result name="input" type="redirect">login</result>
 		</action>
 
 	</package>
@@ -58,27 +82,27 @@
 		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
+        
+        <interceptors>
+			<interceptor name="clearCache" class="in.developershut.bs.interceptor.ClearCache"></interceptor>
+			
+			<interceptor-stack name="sessionAuthStack">
+			<interceptor-ref name="clearCache" />
+			<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
 		
-		<!-- <interceptors>
-            <interceptor name="sessionChecker" class="in.developershut.bs.interceptor.SessionChecker"></interceptor>
-            
-            <interceptor-stack name="authStack">
-                <interceptor-ref name="sessionChecker" />
-                <interceptor-ref name="defaultStack" />
-            </interceptor-stack>
-        </interceptors> -->
- 
-        <!-- <default-interceptor-ref name="authStack"></default-interceptor-ref> -->
         
 		<action name="loginUser" class="in.developershut.bs.action.auth.AuthenticateUser" method="loginUser">
-			<!-- <interceptor-ref name="authStack" /> --> 
-			<result name="success" type="tiles">userhome</result>
+			<result name="success" type="redirect">user-home</result>
 			<result name="login" type="tiles">login</result>
+			
 		</action>
 		
 		<action name="logoutUser" class="in.developershut.bs.action.auth.AuthenticateUser" method="logoutUser">
-			<result name="success" type="tiles">login</result>
-			<result name="error" type="tiles">home</result>
+			<interceptor-ref name="sessionAuthStack" />
+			<result name="success" type="redirect">login</result>
+			<result name="error" type="tiles">home</result> <!-- Should redirect to a error page with userhome link -->
 		</action>
 
 	</package>

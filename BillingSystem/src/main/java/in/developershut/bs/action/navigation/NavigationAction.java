@@ -1,11 +1,11 @@
 package in.developershut.bs.action.navigation;
 
-import in.developershut.bs.action.ApplicationConstants;
+import in.developershut.bs.action.ActionConstants;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 public class NavigationAction extends ActionSupport implements
-		ApplicationConstants {
+		ActionConstants {
 
 	private static final long serialVersionUID = 1L;
 

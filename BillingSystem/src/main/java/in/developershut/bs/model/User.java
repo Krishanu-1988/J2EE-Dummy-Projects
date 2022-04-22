@@ -91,4 +91,92 @@ public class User {
 		return lastLoginTime;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("User [userID=");
+		builder.append(userID);
+		builder.append(", userName=");
+		builder.append(userName);
+		builder.append(", passWord=");
+		builder.append(passWord);
+		builder.append(", role=");
+		builder.append(role);
+		builder.append(", organization=");
+		builder.append(organization);
+		builder.append(", currentLoginTime=");
+		builder.append(currentLoginTime);
+		builder.append(", lastLoginTime=");
+		builder.append(lastLoginTime);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((currentLoginTime == null) ? 0 : currentLoginTime.hashCode());
+		result = prime * result + ((lastLoginTime == null) ? 0 : lastLoginTime.hashCode());
+		result = prime * result + ((organization == null) ? 0 : organization.hashCode());
+		result = prime * result + ((passWord == null) ? 0 : passWord.hashCode());
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		result = prime * result + (int) (userID ^ (userID >>> 32));
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof User))
+			return false;
+		User other = (User) obj;
+		if (currentLoginTime == null) {
+			if (other.currentLoginTime != null)
+				return false;
+		} else if (!currentLoginTime.equals(other.currentLoginTime))
+			return false;
+		if (lastLoginTime == null) {
+			if (other.lastLoginTime != null)
+				return false;
+		} else if (!lastLoginTime.equals(other.lastLoginTime))
+			return false;
+		if (organization == null) {
+			if (other.organization != null)
+				return false;
+		} else if (!organization.equals(other.organization))
+			return false;
+		if (passWord == null) {
+			if (other.passWord != null)
+				return false;
+		} else if (!passWord.equals(other.passWord))
+			return false;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
+		if (userID != other.userID)
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
+	}
+
 }

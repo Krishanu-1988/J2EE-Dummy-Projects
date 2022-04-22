@@ -11,6 +11,7 @@ Version    : 1.0
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -34,15 +35,15 @@ Version    : 1.0
 				<tr>
 					<td align="left">Enter Username</td>
 					<td align="left">:</td>
-					<td align="left"><s:textfield name="username" /></td>
+					<td align="left"><s:textfield name="userName" /></td>
 				</tr>
 				<tr>
 					<td align="left">Enter Password</td>
 					<td align="left">:</td>
-					<td align="left"><s:password name="password" /></td>
+					<td align="left"><s:password name="passWord" /></td>
 				</tr>
 				<tr>
-					<td colspan="3"><s:submit value="LOGIN"
+					<td colspan="3"><s:submit value="LOG IN"
 							class="affermative-button"
 							style="position: relative; top: 15px; left: 40.1%;" /></td>
 				</tr>
