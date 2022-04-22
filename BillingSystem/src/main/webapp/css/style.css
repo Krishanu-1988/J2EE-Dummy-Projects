@@ -1,0 +1,120 @@
+/*
+Design by Developers Hut ©
+
+Name       : Billing System
+Description: Retail application for invoicing
+Version    : 1.0
+*/
+.header-text {
+	font-size: 25pt;
+}
+
+.home-image-container {
+	width: 60%;
+	height: 350px;
+	position: relative;
+	right: -40%;
+	margin-top: 60px;
+}
+
+.home-block {
+	border-style: solid; 
+	border-width: 1px; 
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+
+.home-block:hover {
+ -webkit-animation-name: spin;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 500ms;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 500ms;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotateY(0deg); }
+    to { -ms-transform: rotateY(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotateY(0deg); }
+    to { -moz-transform: rotateY(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotateY(0deg); }
+    to { -webkit-transform: rotateY(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotateY(0deg);
+    }
+    to {
+        transform:rotateY(360deg);
+	}
+}
+
+.login-wrapper {
+	border-style: solid;
+	border-width: 1px;
+	width: 30%;
+	min-width: 400px;
+	height: 300px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.login-error-wrapper {
+	border-style: solid;
+	border-width: 1px;
+	width: 30%;
+	min-width: 400px;
+	height: 20px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #FFCCCC;
+	color: #CC0000;
+}
+
+.login-logo {
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-radius: 50px;
+	width: 100px;
+	height: 100px;
+	left: 37.5%;
+	position: relative;
+	top: -25px;
+	background-image: url(../images/user-hover.png);
+	background-size: 80px 80px;
+	background-repeat: no-repeat;
+	background-position: 11px 20px;
+	background-color: grey;
+}
+
+.tech-logo {
+	position: relative;
+	width: 80%;
+}
+
+.tech-wrapper {
+	border-style: solid;
+	border-width: 1px;
+	width: 450px;
+	height: 300px;
+	line-height: 15px;
+	margin-top: 88px;
+}

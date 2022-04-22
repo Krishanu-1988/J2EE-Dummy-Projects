@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/base-layout.jsp">
+		<put-attribute name="header" value="/app-header.html" />
+		<put-attribute name="sidebar" value="/app-sidebar.html" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/footer.html" />
+	</definition>
+
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="body" value="/app-home.html" />
+	</definition>
+
+	<definition name="login" extends="baseLayout">
+		<put-attribute name="body" value="/login.jsp" />
+	</definition>
+
+	<definition name="tech-support" extends="baseLayout">
+		<put-attribute name="body" value="/tech-support.jsp" />
+	</definition>
+
+
+	<definition name="userHomeLayout" template="/userhome-layout.jsp">
+		<put-attribute name="header" value="/user-header.html" />
+		<put-attribute name="sidebar" value="/user-sidebar.html" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/footer.html" />
+	</definition>
+
+	<definition name="userhome" extends="userHomeLayout">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="settings" extends="userHomeLayout">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="billing" extends="userHomeLayout">
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="reports" extends="userHomeLayout">
+		<put-attribute name="body" value="" />
+	</definition>
+
+</tiles-definitions>
