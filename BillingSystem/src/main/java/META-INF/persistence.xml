@@ -13,7 +13,7 @@
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
 			<property name="eclipselink.ddl-generation" value="create-tables"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/billingsys"/>
-			<property name="javax.persistence.jdbc.user" value=""/>
+			<property name="javax.persistence.jdbc.user" value="billingdbuser"/>
 			<property name="javax.persistence.jdbc.password" value=""/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 		</properties>
