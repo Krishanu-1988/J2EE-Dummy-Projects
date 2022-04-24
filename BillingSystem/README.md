@@ -6,10 +6,7 @@ Currently PostgresSQL DB connection has been configured in persistence.xml. Howe
 
 ```
 CREATE DATABASE billingsys;
-
-CREATE USER 'billingdbuser'@'localhost' IDENTIFIED BY '<preferred-password>';
-CREATE USER 'billingdbuser'@'%' IDENTIFIED BY '<preferred-password>';
-GRANT ALL ON billingsys.* TO 'billingdbuser'@'localhost';
-GRANT ALL ON billingsys.* TO 'billingdbuser'@'%';
+CREATE USER billingdbuser with ENCRYPTED PASSWORD '<preferred-password>';
+GRANT ALL PRIVILEGES ON DATABASE billingsys TO billingdbuser;
 ```
 Application would generate the required tables (as per the persistence objects defined in the persistence.xml) using JPA
