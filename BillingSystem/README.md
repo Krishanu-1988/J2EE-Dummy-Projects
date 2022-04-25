@@ -8,5 +8,8 @@ Currently PostgresSQL DB connection has been configured in persistence.xml. Howe
 CREATE DATABASE billingsys;
 CREATE USER billingdbuser with ENCRYPTED PASSWORD '<preferred-password>';
 GRANT ALL PRIVILEGES ON DATABASE billingsys TO billingdbuser;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to billingdbuser;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public to billingdbuser;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public to billingdbuser;
 ```
 Application would generate the required tables (as per the persistence objects defined in the persistence.xml) using JPA
