@@ -1,0 +1,96 @@
+@CHARSET "ISO-8859-1";
+.pos_welcome
+{
+	position:absolute;
+	top:130px;
+	left:360px;
+}
+.pos_form
+{
+	position:absolute;
+	top:450px;
+	left:700px;
+}
+.pos_imgAdmin
+{
+	position:absolute;
+	top:440px;
+	left:550px;
+	width:250px;
+	height:250px;
+}
+.pos_imgUser
+{
+	position:absolute;
+	top:435px;
+	left:550px;
+	width:250px;
+	height:250px;
+	
+}
+.pos_imgReg
+{
+    position:absolute;
+	top:450px;
+	left:480px;
+	width:250px;
+	height:250px;
+}
+.pos_logout
+{
+position:absolute;
+	top:400px;
+	left:650px;
+}
+.pos_imgLogo
+{
+	position:absolute; 
+	top:190px; 
+	left:50px; 
+	width:250px; 
+	height:250px;
+}
+.pos_menu
+{
+	position:absolute; 
+	top:480px; 
+	left:45px; 
+	width:250px; 
+	height:250px;
+}
+.pos_userform
+{
+	position:absolute;
+	top:200px;
+	left:360px;
+}
+.pos_TimeLog
+{
+	position:absolute;
+	top:950px;
+	left:58px;
+}
+.pos_viewList
+{
+	position:absolute;
+	top:300px;
+	left:390px;
+}
+.pos_formAck
+{
+	position:absolute;
+	top:350px;
+	left:850px;
+}
+.pos_adminform
+{
+	position:absolute;
+	top:450px;
+	left:550px;
+}
+.pos_Admin_menu
+{
+	position:absolute;
+	top:550px;
+	left:58px;
+}
