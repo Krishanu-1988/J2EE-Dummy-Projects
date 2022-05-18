@@ -1,5 +1,8 @@
+-- Create DB and user
 CREATE DATABASE moviesdb;
+CREATE USER moviesdbuser with ENCRYPTED PASSWORD '<preferred-password>';
 
+-- Create required tables
 CREATE TABLE UserData (
 	username VARCHAR ( 50 ) NOT NULL,
 	id INT PRIMARY KEY,
@@ -45,6 +48,8 @@ CREATE TABLE MoviePath (
 	path VARCHAR ( 255 ) NOT NULL
 );
 
+
+-- Provide all priviledges to the DB user
 GRANT ALL PRIVILEGES ON DATABASE moviesdb TO moviesdbuser;
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to moviesdbuser;
