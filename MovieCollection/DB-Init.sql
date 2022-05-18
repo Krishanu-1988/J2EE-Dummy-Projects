@@ -48,9 +48,6 @@ CREATE TABLE MoviePath (
 
 -- Provide all priviledges to the DB user
 GRANT ALL PRIVILEGES ON DATABASE moviesdb TO moviesdbuser;
-
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to moviesdbuser;
-
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public to moviesdbuser;
-
 GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public to moviesdbuser;
