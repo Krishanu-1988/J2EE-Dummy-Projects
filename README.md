@@ -1,4 +1,4 @@
-# J2EEWebAppsArchive
+# J2EE-Dummy-Projects
 This repo contains archives of Java web applications created as dummy projects. Those projects are mostly incomplete or complete at the Phase-1 level
 
 **Project List:**
